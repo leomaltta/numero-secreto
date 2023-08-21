@@ -1,3 +1,20 @@
+
+function endGame(guess) {
+
+    if (guess.toUpperCase() === 'GAME OVER') {
+        document.body.innerHTML =
+        `
+            <h2 class="game-over">GAME OVER</h2>
+            <button id="jogar-novamente" class="btn-jogar-gameover">Jogar novamente</button>
+
+        `
+        document.body.style.backgroundColor = 'rgb(223, 115, 115)'
+        recognition.addEventListener('end', () => recognition.end())
+    }
+
+}
+
+
 function verifyGuess(guess) {
     const num = +guess
 
@@ -42,3 +59,4 @@ document.body.addEventListener('click', e => {
         window.location.reload()
     }
 })
+

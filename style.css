@@ -19,6 +19,7 @@ body {
     font-family: var(--font-family);
 }
 
+
 h1 {
     font-size: 5em;
 }
@@ -35,6 +36,29 @@ h3 {
 .mensagem {
     font-size: 1.5em;
     margin-top: 1em;
+}
+
+.game-over {
+    font-size: 5em;
+    margin-bottom: 1em;
+}
+
+.btn-jogar-gameover{
+    border: 2px solid var(--clr-primary);
+    display: inline-block;
+    font-size: 2em;
+    padding: 10px 23px;
+    margin: 20px;
+    background-color: transparent;
+    color: var(--clr-primary);
+    font-family: var(--font-family);
+}
+
+.btn-jogar-gameover:hover {
+    color: rgb(223, 115, 115);
+    background-color: var(--clr-primary);
+    cursor: pointer;
+    
 }
 
 .btn-jogar{
