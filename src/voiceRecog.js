@@ -1,26 +1,26 @@
+const elementGuess = document.querySelector("#chute");
 
-const elementGuess = document.querySelector('#chute')
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.lang = "pt-Br";
+recognition.start();
 
-const recognition = new SpeechRecognition()
-recognition.lang = 'pt-Br'
-recognition.start()
-
-recognition.addEventListener('result', onSpeak)
+recognition.addEventListener("result", onSpeak);
 
 function onSpeak(e) {
-    let guess = e.results[0][0].transcript
-    showGuess(guess)
-    verifyGuess(guess)
-    endGame(guess)
+  let guess = e.results[0][0].transcript;
+  showGuess(guess);
+  verifyGuess(guess);
+  endGame(guess);
 }
 
 function showGuess(guess) {
-    elementGuess.innerHTML = `
+  elementGuess.innerHTML = `
     <div>Você disse:</div>
     <span class="box">${guess}</span
-    `
+    `;
 }
 
-recognition.addEventListener('end', () => recognition.start())
+recognition.addEventListener("end", () => recognition.start());
